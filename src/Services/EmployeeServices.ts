@@ -12,4 +12,14 @@ export class EmployeeServices implements IEmployeeServices {
   getEmployees(): Employee[] {
     return employees;
   }
+
+  getTotalEmployees(): number {
+    return employees.length;
+  }
+
+  getAvgAgeOfEmp(): number {
+    var age = 0;
+    employees.forEach((x) => (age += x.Age));
+    return age / this.getTotalEmployees();
+  }
 }

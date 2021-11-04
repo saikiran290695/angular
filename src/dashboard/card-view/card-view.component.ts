@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { dashboardMetaData } from '../../Model/dashboardDetails';
 import { Employee } from '../../Model/employeeDetails';
 
 @Component({
@@ -8,7 +9,7 @@ import { Employee } from '../../Model/employeeDetails';
 })
 export class CardViewComponent implements OnInit {
   constructor() {}
-  @Input() employee: Employee;
+  @Input() dashboardmetadata: dashboardMetaData;
 
   // employee: Employee = {
   //   Name: 'saikiran',

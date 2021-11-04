@@ -1,7 +1,10 @@
 .infoBox {
-  width: 25%;
-  height: 250px;
+  width: 33%;
+  height: 150px;
   background-color: blueviolet;
   color: white;
   margin: 0 5px;
+  float: left;
+  text-align: center;
+  border-radius: 15px;
 }

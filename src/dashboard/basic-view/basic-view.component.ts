@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { dashboardMetaData } from '../../Model/dashboardDetails';
 import { Employee } from '../../Model/employeeDetails';
+import { DashboardServicesService } from '../../Services/dashboard-services.service';
 import { EmployeeServices } from '../../Services/EmployeeServices';
 
 @Component({
@@ -8,12 +10,18 @@ import { EmployeeServices } from '../../Services/EmployeeServices';
   styleUrls: ['./basic-view.component.css'],
 })
 export class BasicViewComponent implements OnInit {
-  constructor(public _employeeService: EmployeeServices) {}
+  constructor(
+    public _employeeService: EmployeeServices,
+    public _dashboardServices: DashboardServicesService
+  ) {}
 
-  ngOnInit() {}
-  employees: Employee[];
+  ngOnInit() {
+    this.setDashboardMetadata();
+  }
 
-  setEmployeeList(): void {
-    this.employees = this._employeeService.getEmployees();
+  dashboardMetadata: dashboardMetaData[];
+
+  setDashboardMetadata(): void {
+    this.dashboardMetadata = this._dashboardServices.getMetaData();
   }
 }

@@ -1,3 +1,6 @@
 <h2><u>Employee Details</u></h2>
-<app-card-view *ngFor="let emp of employees"></app-card-view>
+<div *ngFor="let metaData of dashboardMetadata">
+  <app-card-view [dashboardmetadata]="metaData"></app-card-view>
+</div>
+
 <div class="block"></div>
