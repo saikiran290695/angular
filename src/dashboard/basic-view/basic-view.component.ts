@@ -8,6 +8,5 @@ import { EmployeeServices } from '../../Services/EmployeeServices';
 })
 export class BasicViewComponent implements OnInit {
   constructor(_employeeService: EmployeeServices) {}
-
   ngOnInit() {}
 }
