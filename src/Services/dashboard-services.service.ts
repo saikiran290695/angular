@@ -3,7 +3,11 @@ import { IDashboardServices } from '../IServices/idashboard-services';
 import { dashboardMetaData } from '../Model/dashboardDetails';
 import { EmployeeServices } from '../Services/EmployeeServices';
 
-@Injectable()
+@Injectable(
+  {
+    providedIn: 'root'
+  }
+)
 export class DashboardServicesService implements IDashboardServices {
   constructor(public employeeServices: EmployeeServices) {}
   getMetaData(): dashboardMetaData[] {
