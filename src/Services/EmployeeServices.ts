@@ -3,10 +3,9 @@ import { IEmployeeServices } from '../IServices/IEmployeeServices';
 import { Employee } from '../Model/employeeDetails';
 import { employees } from '../Data/EmployeeDetails';
 
-Injectable({
+@Injectable({
   providedIn: 'root',
-});
-
+})
 export class EmployeeServices implements IEmployeeServices {
   constructor() {}
 
