@@ -11,6 +11,7 @@ export class HerosComponent implements OnInit {
   hero = 'Lets try soemthing new';
   employee: Employee[] = employeeList;
   selectedEmployee: Employee = null;
+
   onselect(emp) {
     this.selectedEmployee = emp;
   }

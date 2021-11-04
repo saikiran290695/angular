@@ -1,8 +1,7 @@
 <p>{{ hero }}</p>
 <!-- <p *ngIf="selectedEmployee">{{ selectedEmployee.Name }}</p> -->
-<div *ngIf="selectedEmployee">
-  <app-details-of-emp [employee]="selectedEmployee"></app-details-of-emp>
-</div>
+
+<!-- <app-details-of-emp [employee]="selectedEmployee"></app-details-of-emp> -->
 <p>this is unknown</p>
 <div
   *ngFor="let emp of employee"
