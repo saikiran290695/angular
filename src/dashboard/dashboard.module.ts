@@ -7,5 +7,6 @@ import { EmployeeServices } from '../Services/EmployeeServices';
   imports: [CommonModule],
   declarations: [BasicViewComponent],
   exports: [BasicViewComponent],
+  providers: [EmployeeServices],
 })
 export class DashboardModule {}

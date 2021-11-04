@@ -6,5 +6,5 @@ Injectable({
 });
 
 export interface IEmployeeServices {
-  getEmployees(): Employee;
+  getEmployees(): Employee[];
 }

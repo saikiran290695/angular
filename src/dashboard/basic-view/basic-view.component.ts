@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IEmployeeServices } from '../../IServices/IEmployeeServices';
 import { EmployeeServices } from '../../Services/EmployeeServices';
 
 @Component({
@@ -8,11 +7,7 @@ import { EmployeeServices } from '../../Services/EmployeeServices';
   styleUrls: ['./basic-view.component.css'],
 })
 export class BasicViewComponent implements OnInit {
-  private _employeeService: IEmployeeServices;
-
-  constructor(_employeeService: EmployeeServices) {
-    //this._employeeService = EmployeeServices;
-  }
+  constructor(_employeeService: EmployeeServices) {}
 
   ngOnInit() {}
 }
