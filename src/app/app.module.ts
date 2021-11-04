@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
+// import { BasicViewComponent } from '../dashboard/basic-view/basic-view.component';
 import { DashboardModule } from '../dashboard/dashboard.module';
 
 @NgModule({
