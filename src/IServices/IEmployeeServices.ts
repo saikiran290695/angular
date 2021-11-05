@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Employee } from '../Model/employeeDetails';
 
 Injectable({
@@ -6,5 +7,7 @@ Injectable({
 });
 
 export interface IEmployeeServices {
-  getEmployees(): Employee[];
+  getEmployees(): Observable<Employee[]>;
+  addEmployee(employee: Employee): void;
+  deleteEmployee(employee: Employee): void;
 }

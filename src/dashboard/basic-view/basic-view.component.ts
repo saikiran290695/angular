@@ -28,6 +28,29 @@ export class BasicViewComponent implements OnInit {
   }
 
   getListOfEmployees(): void {
-    this.employeeDetails = this._employeeService.getEmployees();
+    this._employeeService
+      .getEmployees()
+      .subscribe((x) => (this.employeeDetails = x));
+  }
+
+  addRecord(): void {
+    this._employeeService.addEmployee({
+      Name: 'addedEmp',
+      Age: 35,
+      Contact: 789584,
+      Salary: 7854,
+      Department: 'BIE',
+      Address: {
+        AddressLine1: 'ad1',
+        AddressLine2: 'ad2',
+        City: 'ct',
+        State: 'stat',
+        Zipcode: 54882,
+      },
+    });
+  }
+
+  deleteRecord(employee: Employee): void {
+    this._employeeService.deleteEmployee(employee);
   }
 }

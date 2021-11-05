@@ -1,5 +1,12 @@
 .metaData {
   background-color: brown;
   border: 1px solid black;
-  display: flex;    
+  display: flex;
+}
+
+.table td,
+th {
+  max-width: 200px;
+  border: 0.5px dotted black;
+  padding: 5px 5px;
 }

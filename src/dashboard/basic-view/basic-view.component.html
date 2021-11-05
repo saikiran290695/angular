@@ -5,18 +5,33 @@
   </div>
 </div>
 
-<table>
-  <tr>
-    <td>Name</td>
-    <td>Age</td>
-    <td>Department</td>
-    <td>Address</td>
-    <td>Contact</td>
-    <td>Salary</td>
-  </tr>
-  <tr *ngFor="let emp of employeeDetails">
-    <td>{{ emp.Name }}</td>
-    <td>{{ emp.Age }}</td>
-    <td></td>
-  </tr>
-</table>
+<div>
+  <button mat-button (click)="addRecord()">Add Record</button>
+  <table class="table">
+    <thead>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Department</th>
+      <th>Address</th>
+      <th>Contact</th>
+      <th>Salary</th>
+      <th>Actions</th>
+    </thead>
+    <tr *ngFor="let emp of employeeDetails">
+      <td>
+        <!-- <input /> -->
+        <p>{{ emp.Name }}</p>
+      </td>
+      <td>{{ emp.Age }}</td>
+      <td>{{ emp.Department }}</td>
+      <td>{{ emp.Address | addressconsolidator }}</td>
+      <td>{{ emp.Contact }}</td>
+      <td>{{ emp.Salary }}</td>
+      <td>
+        <button mat-button>Edit</button>
+        <button mat-button (click)="deleteRecord(this.emp)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<p id="temp"></p>

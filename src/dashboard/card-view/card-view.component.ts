@@ -1,6 +1,5 @@
 import { Component, Input, NgModule, OnInit } from '@angular/core';
 import { dashboardMetaData } from '../../Model/dashboardDetails';
-import { Employee } from '../../Model/employeeDetails';
 
 @Component({
   selector: 'app-card-view',
