@@ -1,11 +1,22 @@
 <h2><u>Employee Details</u></h2>
-<div *ngFor="let metaData of dashboardMetadata">
-  <app-card-view [dashboardmetadata]="metaData"></app-card-view>
+<div class="metaData">
+  <div *ngFor="let metaData of dashboardMetadata">
+    <app-card-view [dashboardmetadata]="metaData"></app-card-view>
+  </div>
 </div>
 
 <table>
+  <tr>
+    <td>Name</td>
+    <td>Age</td>
+    <td>Department</td>
+    <td>Address</td>
+    <td>Contact</td>
+    <td>Salary</td>
+  </tr>
   <tr *ngFor="let emp of employeeDetails">
     <td>{{ emp.Name }}</td>
+    <td>{{ emp.Age }}</td>
     <td></td>
   </tr>
 </table>

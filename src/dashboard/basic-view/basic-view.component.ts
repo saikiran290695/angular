@@ -17,6 +17,7 @@ export class BasicViewComponent implements OnInit {
 
   ngOnInit() {
     this.setDashboardMetadata();
+    this.getListOfEmployees();
   }
 
   dashboardMetadata: dashboardMetaData[];

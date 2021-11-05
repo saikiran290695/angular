@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, NgModule, OnInit } from '@angular/core';
 import { dashboardMetaData } from '../../Model/dashboardDetails';
 import { Employee } from '../../Model/employeeDetails';
 
@@ -11,19 +11,5 @@ export class CardViewComponent implements OnInit {
   constructor() {}
   @Input() dashboardmetadata: dashboardMetaData;
 
-  // employee: Employee = {
-  //   Name: 'saikiran',
-  //   Age: 25,
-  //   Contact: 854587,
-  //   Department: 'software',
-  //   Salary: 4578,
-  //   Address: {
-  //     AddressLine1: 'Bandlaguda',
-  //     AddressLine2: 'hyd',
-  //     City: 'Hyderabad',
-  //     State: 'Telanagana',
-  //     Zipcode: 4589620,
-  //   },
-  // };
   ngOnInit() {}
 }
