@@ -20,8 +20,13 @@ export class BasicViewComponent implements OnInit {
   }
 
   dashboardMetadata: dashboardMetaData[];
+  employeeDetails: Employee[];
 
   setDashboardMetadata(): void {
     this.dashboardMetadata = this._dashboardServices.getMetaData();
+  }
+
+  getListOfEmployees(): void {
+    this.employeeDetails = this._employeeService.getEmployees();
   }
 }

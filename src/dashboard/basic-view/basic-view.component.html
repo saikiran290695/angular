@@ -3,4 +3,11 @@
   <app-card-view [dashboardmetadata]="metaData"></app-card-view>
 </div>
 
-<div class="block"></div>
+<table>
+  <tr *ngFor="let emp of employeeDetails">
+    <td>{{emp.Name}}
+      <td>
+  </tr>
+</table>
+
+<!-- <div class="block"></div> -->
