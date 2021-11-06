@@ -28,7 +28,7 @@
       <td>{{ emp.Contact }}</td>
       <td>{{ emp.Salary }}</td>
       <td>
-        <button mat-button>Edit</button>
+        <button mat-button (click)="editRecord(this.emp)">Edit</button>
         <button mat-button (click)="deleteRecord(this.emp)">Delete</button>
       </td>
     </tr>

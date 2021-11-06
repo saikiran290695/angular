@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog/dialog-ref';
 import { dashboardMetaData } from '../../Model/dashboardDetails';
 import { Employee } from '../../Model/employeeDetails';
 import { DashboardServicesService } from '../../Services/dashboard-services.service';
 import { EmployeeServices } from '../../Services/EmployeeServices';
+import { EditempComponent } from '../editemp/editemp.component';
 
 @Component({
   selector: 'app-basic-view',
@@ -12,7 +15,8 @@ import { EmployeeServices } from '../../Services/EmployeeServices';
 export class BasicViewComponent implements OnInit {
   constructor(
     public _employeeService: EmployeeServices,
-    public _dashboardServices: DashboardServicesService
+    public _dashboardServices: DashboardServicesService,
+    public _dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -52,5 +56,9 @@ export class BasicViewComponent implements OnInit {
 
   deleteRecord(employee: Employee): void {
     this._employeeService.deleteEmployee(employee);
+  }
+
+  editRecord(employee: Employee): void {
+    const _dialogRef = this._dialog.open(EditempComponent, { data: employee });
   }
 }

@@ -1,0 +1,35 @@
+<div style="float:left">
+  <form>
+    <label for="employeeName">Name: </label>
+    <input name="employeeName" [(ngModel)]="employee.Name" />
+    <br />
+    <label for="employeeAge">Age: </label>
+    <input name="employeeAge" [(ngModel)]="employee.Age" />
+    <br />
+    <label for="employeeDepartment">Department: </label>
+    <input name="employeeDepartment" [(ngModel)]="employee.Department" />
+    <br />
+    <label for="employeeAddress1">Address Line 1: </label>
+    <input
+      name="employeeAddress1"
+      [(ngModel)]="employee.Address.AddressLine1"
+    />
+    <br />
+    <label for="employeeAddress2">Address Line 2: </label>
+    <input
+      name="employeeAddress2"
+      [(ngModel)]="employee.Address.AddressLine2"
+    />
+    <br />
+    <label for="employeeCity">City: </label>
+    <input name="employeeCity" [(ngModel)]="employee.Address.City" />
+    <br />
+    <label for="employeeState">State: </label>
+    <input name="employeeState" [(ngModel)]="employee.Address.State" />
+    <br />
+    <label for="employeeZipcode">Zipcode: </label>
+    <input name="employeeZipcode" [(ngModel)]="employee.Address.Zipcode" />
+  </form>
+  <button mat-button (click)="saveChanges()">Save</button>
+  <button mat-button (click)="closeBox()">Close</button>
+</div>
