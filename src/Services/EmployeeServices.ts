@@ -10,21 +10,26 @@ import { Observable, of } from 'rxjs';
 export class EmployeeServices implements IEmployeeServices {
   constructor() {}
 
-  private emps: Employee[] = employees;
+  public emps: Employee[] = employees;
 
   getEmployees(): Observable<Employee[]> {
     const emp = of(this.emps);
     return emp;
   }
 
-  getTotalEmployees(): number {
-    return this.emps.length;
+  getTotalEmployees(): Observable<number> {
+    const len = of(this.emps.length);
+    return len;
   }
 
   getAvgAgeOfEmp(): number {
     var age = 0;
     this.emps.forEach((x) => (age += x.Age));
-    return age / this.getTotalEmployees();
+    var len: number;
+
+    this.getTotalEmployees().subscribe((x) => (len = x));
+
+    return age / len;
   }
 
   addEmployee(employee: Employee): void {

@@ -3,22 +3,24 @@ import { IDashboardServices } from '../IServices/idashboard-services';
 import { dashboardMetaData } from '../Model/dashboardDetails';
 import { EmployeeServices } from '../Services/EmployeeServices';
 
-@Injectable(
-  {
-    providedIn: 'root'
-  }
-)
+@Injectable({
+  providedIn: 'root',
+})
 export class DashboardServicesService implements IDashboardServices {
   constructor(public employeeServices: EmployeeServices) {}
   getMetaData(): dashboardMetaData[] {
+    let emp_length;
+    this.employeeServices
+      .getTotalEmployees()
+      .subscribe((x) => (emp_length = x));
     return [
       {
         title: 'Total Employees',
-        value: this.employeeServices.getTotalEmployees(),
+        value: emp_length,
       },
       {
         title: 'Average Age Of Employees',
-        value: this.employeeServices.getAvgAgeOfEmp(),
+        value: Math.floor(this.employeeServices.getAvgAgeOfEmp()),
       },
     ];
   }

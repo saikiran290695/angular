@@ -15,9 +15,7 @@ export class EditempComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<EditempComponent>,
     @Inject(MAT_DIALOG_DATA) public employee: Employee
-  ) {
-    console.log(employee);
-  }
+  ) {}
 
   ngOnInit() {}
 
@@ -25,6 +23,7 @@ export class EditempComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  saveChanges(): void {    
+  saveChanges(): void {
+    this.dialogRef.close();
   }
 }

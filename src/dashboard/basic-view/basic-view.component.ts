@@ -38,20 +38,28 @@ export class BasicViewComponent implements OnInit {
   }
 
   addRecord(): void {
-    this._employeeService.addEmployee({
-      Name: 'addedEmp',
-      Age: 35,
-      Contact: 789584,
-      Salary: 7854,
-      Department: 'BIE',
+    let _employeeTemp: Employee = {
+      Name: '',
+      Age: null,
+      Department: '',
+      Contact: null,
+      Salary: null,
       Address: {
-        AddressLine1: 'ad1',
-        AddressLine2: 'ad2',
-        City: 'ct',
-        State: 'stat',
-        Zipcode: 54882,
+        AddressLine1: '',
+        AddressLine2: '',
+        City: '',
+        State: '',
+        Zipcode: null,
       },
+    };
+
+    const _dialogRef = this._dialog.open(EditempComponent, {
+      data: _employeeTemp,
     });
+
+    _dialogRef
+      .afterClosed()
+      .subscribe((result) => this._employeeService.addEmployee(_employeeTemp));
   }
 
   deleteRecord(employee: Employee): void {
@@ -60,5 +68,7 @@ export class BasicViewComponent implements OnInit {
 
   editRecord(employee: Employee): void {
     const _dialogRef = this._dialog.open(EditempComponent, { data: employee });
+
+    _dialogRef.afterClosed().subscribe((result) => console.log(result));
   }
 }

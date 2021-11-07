@@ -30,6 +30,6 @@
     <label for="employeeZipcode">Zipcode: </label>
     <input name="employeeZipcode" [(ngModel)]="employee.Address.Zipcode" />
   </form>
-  <button mat-button (click)="saveChanges()">Save</button>
-  <button mat-button (click)="closeBox()">Close</button>
+  <button mat-button [mat-dialog-close]="employee">Save</button>
+  <button mat-button [mat-dialog-close]="employee">Close</button>
 </div>
